@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Input, Link, Text, Image, IconButton, InputRightElement, InputGroup, border } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Input, Link, Text, Image, IconButton, InputRightElement, InputGroup } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
