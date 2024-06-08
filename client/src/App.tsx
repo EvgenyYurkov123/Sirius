@@ -4,6 +4,7 @@ import { Layout } from './Layout/Layout'
 import Home from './Pages/Home/Home';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import Shedule from './Pages/Schedule/Shedule';
+import Main from './Pages/Main/Main';
 
 function App() {
   const routes = [
@@ -11,6 +12,7 @@ function App() {
     // { path: "/reg", element: <Reg /> },
     { path: "/login", element: <LoginPage /> },
     { path: "/schedule", element: <Shedule /> },
+    { path: "/main", element: <Main /> },
   ];
   return (
     <>
