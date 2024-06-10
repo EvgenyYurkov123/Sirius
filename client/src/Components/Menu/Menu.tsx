@@ -38,7 +38,7 @@ export default function Menu() {
             <Flex bg={'#FDFDFF'} h={'18.2%'} w={'83%'} borderRadius={'15px'} mb={'5%'} direction={'column'} justifyContent={'space-around'} position={'relative'} overflow="hidden">
                 <Text fontSize={'16px'} fontWeight={'400'} color={'#323854'} align={'start'} ml={'6%'}   >Учитесь бесплатно</Text>
                 <Text fontSize={'10'} fontWeight={'200'} w={'90%'} align={'start'} ml={'6%'}> Приводите друзей с детьми заниматься в Sirius Future и получайте подарки</Text>
-            <Button bg={'skyblue'} w={'50%'} h={'25%'} borderRadius={'25'} ml={'8%'}>Узнать</Button>
+            <Button bg={'skyblue'} w={'35%'} h={'25%'} borderRadius={'25'} ml={'8%'} fontSize={'12px'} fontWeight={'400'} mb={'3%'}>Узнать</Button>
                 <Image src="./IconMenu/present/present.png" position={'absolute'}  ml={'60%'} mt={'48%'} alt="Icon" w={'81px'} h={'98px'} mr={'2'} />
 
             </Flex>
