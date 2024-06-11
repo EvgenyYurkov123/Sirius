@@ -2,7 +2,9 @@ import { Button, Flex,Image } from "@chakra-ui/react";
 
 export default function Navbar() {
     return (
-        <Flex bg={'skyblue'} h={'70%'} maxH={'68px'} mt={'1%'} w={'100%'} borderBottomRadius={'15px'}>
+        <Flex bg={'skyblue'} h={'70%'} maxH={'68px'} mt={'1%'} w={'100%'} borderBottomRadius={'15px'} boxShadow="0px 4px 6px rgba(0, 0, 0, 0.1)"
+            border="1px solid #ccc"
+            p={4}>
             <Flex justifyContent={'space-between'} w={'100%'}>
                 <Flex w={'60%'} align={'center'} ml={'2%'}>123</Flex>
                 <Flex w={'10%'} mr={'3%'} justifyContent={'space-between'} align={'center'}>
