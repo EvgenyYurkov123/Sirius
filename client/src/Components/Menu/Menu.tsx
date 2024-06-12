@@ -6,32 +6,32 @@ export default function Menu() {
             <Flex align={'center'} mt={'10%'}>
                 <Image src="./logoBack.png" alt="Логотип"  w={'100%'} h={'63%'}/>
             </Flex>
-            <Stack direction={'column'} spacing={3}  mt={'10%'} h={'50%'}>
-                <Flex fontSize={'16px'} >
+            <Stack direction={'column'} spacing={3} mt={'10%'} h={'50%'} >
+                <Flex fontSize={'16px'} cursor="pointer">
                     <Image src="./IconMenu/Home.png" alt="Icon" w={'23px'} h={'21px'} mr={'2'} />
                     Главная</Flex>
-                <Flex>
+                <Flex cursor="pointer">
                     <Image src="./IconMenu/Calendar.png" alt="Icon" w={'23px'} h={'21px'} mr={'2'} />
                     Расписание</Flex>
-                <Flex>
+                <Flex cursor="pointer">
                     <Image src="./IconMenu/Wallet.png" alt="Icon" w={'23px'} h={'21px'} mr={'2'} />
                     Оплата</Flex>
-                <Flex>
+                <Flex cursor="pointer">
                     <Image src="./IconMenu/Сup.png" alt="Icon" w={'23px'} h={'21px'} mr={'2'} />
                     Достижения</Flex>
-                <Flex>
+                <Flex cursor="pointer">
                     <Image src="./IconMenu/Puzzle.png" alt="Icon" w={'23px'} h={'21px'} mr={'2'} />
                     Тренажёры</Flex>
-                <Flex>
+                <Flex cursor="pointer">
                     <Image src="./IconMenu/Folder.png" alt="Icon" w={'23px'} h={'21px'} mr={'2'} />
                     Библиотека</Flex>
-                <Flex>
+                <Flex cursor="pointer">
                     <Image src="./IconMenu/Headphones.png" alt="Icon" w={'23px'} h={'21px'} mr={'2'} />
                     Проверка связи</Flex>
-                <Flex>
+                <Flex cursor="pointer">
                     <Image src="./IconMenu/Settings.png" alt="Icon" w={'23px'} h={'21px'} mr={'2'} />
                     Настройки</Flex>
-                <Flex>
+                <Flex cursor="pointer">
                     <Image src="./IconMenu/Question.png" alt="Icon" w={'23px'} h={'21px'} mr={'2'} />
                     Вопросы</Flex>
             </Stack>

@@ -8,14 +8,14 @@ export default function Navbar() {
             <Flex justifyContent={'space-between'} w={'100%'}>
                 <Flex w={'60%'} align={'center'} ml={'2%'} fontWeight={'500'} fontSize={'24'} fontFamily={"PT Sans Caption"}>Добро пожаловать,</Flex>
                 <Flex w={'10%'} mr={'3%'} justifyContent={'space-between'} align={'center'}>
-                    <Button bg={'#FFFFFF'} w={'42px'} h={'42px'} borderRadius={'25'} position={'relative'}>
+                    <Button bg={'#FFFFFF'} w={'42px'} h={'42px'} borderRadius={'25'} position={'relative'} border={'1px'} borderColor={'#7362BC'}>
                         <Image src="./IconMenu/Message/Group1.png" alt="Icon" w={'24px'} h={'22px'} position={'absolute'} zIndex={'1'} mr={'4px'}/>
                         <Image src="./IconMenu/Message/Group.png" alt="Icon" w={'16px'} h={'16px'} position={'absolute'}  ml={'12px'} mt={'11px'}/>
 
                     </Button>
 
                     <Flex>
-                        <Button bg={'#FFFFFF'} w={'42px'} h={'42px'} borderRadius={'25'}>678</Button>
+                        <Button bg={'#FFFFFF'} w={'42px'} h={'42px'} borderRadius={'25'} border={'1px'} borderColor={'#7362BC'} >678</Button>
                     <Flex>^</Flex>
                     </Flex>
 
