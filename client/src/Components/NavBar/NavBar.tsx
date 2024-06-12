@@ -15,7 +15,7 @@ export default function Navbar() {
                     </Button>
 
                     <Flex>
-                    <Flex>678</Flex>
+                        <Button bg={'#FFFFFF'} w={'42px'} h={'42px'} borderRadius={'25'}>678</Button>
                     <Flex>^</Flex>
                     </Flex>
 
