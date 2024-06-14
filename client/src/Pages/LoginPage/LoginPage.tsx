@@ -42,6 +42,7 @@ export default function LoginPage() {
               />
               <InputRightElement width="3rem">
                 <IconButton
+              
                   aria-label={showPassword ? "Скрыть пароль" : "Показать пароль"}
                   h="1.75rem"
                   size="sm"
