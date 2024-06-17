@@ -52,6 +52,7 @@ export default function LoginPage() {
               </InputRightElement>
             </InputGroup>
             <Button
+            
               bgColor={'#8D7FC7'}
               color={'white'}
               width="full"
