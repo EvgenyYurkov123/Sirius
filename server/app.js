@@ -6,7 +6,7 @@ const express = require('express');
 const app = express(); 
 
 const dbConnectCheck = require('../server/db/dbConnectCheck');
-const { PORT } = process.env || 3001;
+const { PORT } = process.env || 3002;
 const userRouter = require('./src/routes/userRouter')
 dbConnectCheck();
 
