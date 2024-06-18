@@ -4,7 +4,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
-  const [ruButtonSize, setRuButtonSize] = useState("md");
+  const [ruButtonSize, setRuButtonSize] = useState("lg"); // RU кнопка по умолчанию больше
   const [enButtonSize, setEnButtonSize] = useState("md");
 
   const togglePasswordVisibility = () => {
@@ -12,12 +12,12 @@ export default function LoginPage() {
   };
 
   const handleRuButtonClick = () => {
-    setRuButtonSize(ruButtonSize === "md" ? "lg" : "md");
+    setRuButtonSize("lg");
     setEnButtonSize("md");
   };
 
   const handleEnButtonClick = () => {
-    setEnButtonSize(enButtonSize === "md" ? "lg" : "md");
+    setEnButtonSize("lg");
     setRuButtonSize("md");
   };
 
@@ -42,7 +42,6 @@ export default function LoginPage() {
               />
               <InputRightElement width="3rem">
                 <IconButton
-              
                   aria-label={showPassword ? "Скрыть пароль" : "Показать пароль"}
                   h="1.75rem"
                   size="sm"
@@ -52,7 +51,6 @@ export default function LoginPage() {
               </InputRightElement>
             </InputGroup>
             <Button
-            
               bgColor={'#8D7FC7'}
               color={'white'}
               width="full"
@@ -82,7 +80,7 @@ export default function LoginPage() {
           m={1}
           color={'#7362BC'}
           onClick={handleRuButtonClick}
-          size={ruButtonSize}
+          fontSize={ruButtonSize === "lg" ? "20px" : "16px"} // Увеличиваем размер шрифта, когда кнопка активна
         >
           RU
         </Link>
@@ -91,11 +89,11 @@ export default function LoginPage() {
           m={1}
           color={'#7362BC'}
           onClick={handleEnButtonClick}
-          size={enButtonSize}
+          fontSize={enButtonSize === "lg" ? "20px" : "16px"} // Увеличиваем размер шрифта, когда кнопка активна
         >
           EN
         </Link>
       </Flex>
     </Flex>
-  )
+  );
 }
