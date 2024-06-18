@@ -80,7 +80,8 @@ export default function LoginPage() {
           m={1}
           color={'#7362BC'}
           onClick={handleRuButtonClick}
-          fontSize={ruButtonSize === "lg" ? "20px" : "16px"} // Увеличиваем размер шрифта, когда кнопка активна
+          fontSize={ruButtonSize === "lg" ? "20px" : "16px"}
+          transition="font-size 0.3s ease" // Плавный переход
         >
           RU
         </Link>
@@ -89,7 +90,8 @@ export default function LoginPage() {
           m={1}
           color={'#7362BC'}
           onClick={handleEnButtonClick}
-          fontSize={enButtonSize === "lg" ? "20px" : "16px"} // Увеличиваем размер шрифта, когда кнопка активна
+          fontSize={enButtonSize === "lg" ? "20px" : "16px"}
+          transition="font-size 0.3s ease" // Плавный переход
         >
           EN
         </Link>
