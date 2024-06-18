@@ -4,7 +4,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
-  const [ruButtonSize, setRuButtonSize] = useState("lg"); // RU кнопка по умолчанию больше
+  const [ruButtonSize, setRuButtonSize] = useState("lg"); 
   const [enButtonSize, setEnButtonSize] = useState("md");
 
   const togglePasswordVisibility = () => {
@@ -81,7 +81,7 @@ export default function LoginPage() {
           color={'#7362BC'}
           onClick={handleRuButtonClick}
           fontSize={ruButtonSize === "lg" ? "20px" : "16px"}
-          transition="font-size 0.3s ease" // Плавный переход
+          transition="font-size 0.3s ease" 
         >
           RU
         </Link>
@@ -91,7 +91,7 @@ export default function LoginPage() {
           color={'#7362BC'}
           onClick={handleEnButtonClick}
           fontSize={enButtonSize === "lg" ? "20px" : "16px"}
-          transition="font-size 0.3s ease" // Плавный переход
+          transition="font-size 0.3s ease" 
         >
           EN
         </Link>
