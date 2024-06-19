@@ -52,13 +52,18 @@ export default function LoginPage() {
                 />
               </InputRightElement>
             </InputGroup>
-            <CustomCheckbox
+            <Flex justifyContent={''}>
+
+            <CustomCheckbox 
+            
+            
               mb={5}
               isChecked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
             >
-              Запомнить меня
+             
             </CustomCheckbox>
+            </Flex>
             <Button
               background="linear-gradient(267.41deg, rgb(147, 195, 255) -0.17%, rgb(183, 160, 255) 40.96%, rgb(218, 123, 255) 88.56%)"
               bgColor={'#8D7FC7'}

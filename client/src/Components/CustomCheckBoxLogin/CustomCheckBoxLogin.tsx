@@ -3,9 +3,11 @@ import { css } from "@emotion/react";
 
 const CustomCheckbox = (props: CheckboxProps) => {
     return (
-        <Checkbox
+        <Checkbox 
+            
             icon={
                 <Box
+                
                     as="span"
                     display="flex"
                     alignItems="center"
@@ -22,6 +24,7 @@ const CustomCheckbox = (props: CheckboxProps) => {
                         <path stroke="#C636FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17.6 2.4 7.077 16 2.4 10.711" />
                     </svg>
                 </Box>
+                
             }
             {...props}
             css={css`
@@ -31,13 +34,14 @@ const CustomCheckbox = (props: CheckboxProps) => {
 
         input:checked + span {
           background: transparent !important; 
-          border:transparent !important; 
+          
           svg {
             opacity: 1;
           }
         }
       `}
-        />
+        >
+       </Checkbox>     
     );
 };
 
