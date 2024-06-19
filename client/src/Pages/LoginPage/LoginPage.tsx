@@ -1,11 +1,13 @@
 import { Box, Button, Flex, Heading, Input, Link, Text, Image, IconButton, InputRightElement, InputGroup } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import CustomCheckbox from "../../Components/CustomCheckBoxLogin/CustomCheckBoxLogin"; 
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
-  const [ruButtonSize, setRuButtonSize] = useState("lg"); 
+  const [ruButtonSize, setRuButtonSize] = useState("lg");
   const [enButtonSize, setEnButtonSize] = useState("md");
+  const [rememberMe, setRememberMe] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -22,13 +24,13 @@ export default function LoginPage() {
   };
 
   return (
-    <Flex direction={'column'} minHeight="100vh" minW={'320'} width="full" align="center" paddingTop={'10%'}>
+    <Flex direction={'column'} minHeight="100vh" minW={'320px'} width="full" align="center" paddingTop={'10%'}>
       <Flex>
         <Image src="./favS1.png" alt="Example Image" mb={4} />
       </Flex>
       <Box p={4} maxWidth="27%">
         <Box textAlign="center">
-          <Heading color={'#323854'} fontSize={'35'}>Вход в Sirius Future</Heading>
+          <Heading color={'#323854'} fontSize={'35px'}>Вход в Sirius Future</Heading>
         </Box>
         <Box my={4} textAlign="left">
           <form>
@@ -50,12 +52,21 @@ export default function LoginPage() {
                 />
               </InputRightElement>
             </InputGroup>
+            <CustomCheckbox
+              mb={5}
+              isChecked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+            >
+              Запомнить меня
+            </CustomCheckbox>
             <Button
+              background="linear-gradient(267.41deg, rgb(147, 195, 255) -0.17%, rgb(183, 160, 255) 40.96%, rgb(218, 123, 255) 88.56%)"
               bgColor={'#8D7FC7'}
               color={'white'}
               width="full"
               type="submit"
-              borderRadius={'25px'}
+              borderRadius={'15px'}
+              border={'none'}
             >
               Войти
             </Button>
@@ -81,7 +92,7 @@ export default function LoginPage() {
           color={'#7362BC'}
           onClick={handleRuButtonClick}
           fontSize={ruButtonSize === "lg" ? "20px" : "16px"}
-          transition="font-size 0.3s ease" 
+          transition="font-size 0.3s ease"
         >
           RU
         </Link>
@@ -91,7 +102,7 @@ export default function LoginPage() {
           color={'#7362BC'}
           onClick={handleEnButtonClick}
           fontSize={enButtonSize === "lg" ? "20px" : "16px"}
-          transition="font-size 0.3s ease" 
+          transition="font-size 0.3s ease"
         >
           EN
         </Link>

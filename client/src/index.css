@@ -61,7 +61,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-  color: #8D7FC7;
+  color: #3204e8;
 }
 
 a:hover {
