@@ -31,7 +31,7 @@ const CustomCheckbox = (props: CheckboxProps) => {
 
         input:checked + span {
           background: transparent !important; 
-         
+          border:transparent !important; 
           svg {
             opacity: 1;
           }
