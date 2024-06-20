@@ -1,47 +1,48 @@
-import { Box, Checkbox, CheckboxProps } from "@chakra-ui/react";
+import { Box, CheckboxProps } from "@chakra-ui/react";
+import { useState } from "react";
 import { css } from "@emotion/react";
 
 const CustomCheckbox = (props: CheckboxProps) => {
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleToggle = () => {
+        setIsChecked(!isChecked);
+    };
+
     return (
-        <Checkbox 
-            
-            icon={
+        <Box
+            w="22px"
+            h="22px"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            border="1px solid rgb(200, 204, 208)"
+            borderRadius="4px"
+            cursor="pointer"
+            onClick={handleToggle}
+            {...props}
+            css={css`
+                background: transparent !important;
+                overflow: visible !important; // Allow content to overflow the box
+            `}
+        >
+            {isChecked && (
                 <Box
-                
                     as="span"
                     display="flex"
                     alignItems="center"
                     justifyContent="center"
                     position="relative"
                     css={css`
-            svg {
-              opacity: 0;
-              transition: opacity 0.2s;
-            }
-          `}
+                        overflow: visible;
+                    `}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none">
-                        <path stroke="#C636FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17.6 2.4 7.077 16 2.4 10.711" />
+                        <path stroke="#C636FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17.6 2.8 7.077 16 2.4 10.711" />
                     </svg>
                 </Box>
-                
-            }
-            {...props}
-            css={css`
-        span {
-          background: transparent !important; 
-        }
-
-        input:checked + span {
-          background: transparent !important; 
-          
-          svg {
-            opacity: 1;
-          }
-        }
-      `}
-        >
-       </Checkbox>     
+            )}
+        </Box>
     );
 };
 

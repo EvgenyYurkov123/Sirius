@@ -28,7 +28,7 @@ export default function LoginPage() {
       <Flex>
         <Image src="./favS1.png" alt="Example Image" mb={4} />
       </Flex>
-      <Box p={4} maxWidth="27%">
+      <Box  maxWidth="30%" minW={'400'}>
         <Box textAlign="center">
           <Heading color={'#323854'} fontSize={'35px'}>Вход в Sirius Future</Heading>
         </Box>
@@ -56,13 +56,14 @@ export default function LoginPage() {
 
             <CustomCheckbox 
             
-            
+            mr={'4'}
               mb={5}
               isChecked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
             >
-             
+              
             </CustomCheckbox>
+              Запомнить меня
             </Flex>
             <Button
               background="linear-gradient(267.41deg, rgb(147, 195, 255) -0.17%, rgb(183, 160, 255) 40.96%, rgb(218, 123, 255) 88.56%)"
@@ -88,7 +89,7 @@ export default function LoginPage() {
       </Box>
       <Flex direction={'column'} mt={'7'}>
         <Text>Нет аккаунта?</Text>
-        <Link href="/register" color={'#008AFF'} _hover={{ textDecoration: "none" }}>Зарегистрироваться</Link>
+        <Link href="/register" color={'#9A64FF'} fontSize={'24px'}  _hover={{ textDecoration: "none" }}>Зарегистрироваться</Link>
       </Flex>
       <Flex justify="space-between" mt={4}>
         <Link
