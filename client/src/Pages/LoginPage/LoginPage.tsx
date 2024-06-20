@@ -60,6 +60,7 @@ export default function LoginPage() {
                   size="sm"
                   onClick={togglePasswordVisibility}
                   icon={showPassword ? openEyeIcon : closedEyeIcon}
+                  border={'none'}
                 />
               </InputRightElement>
             </InputGroup>
