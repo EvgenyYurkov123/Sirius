@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Heading, Input, Link, Text, Image, IconButton, InputRightElement, InputGroup } from "@chakra-ui/react";
 import { useState } from "react";
 import CustomCheckbox from "../../Components/CustomCheckBoxLogin/CustomCheckBoxLogin";
+import { css } from "@emotion/react";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -53,14 +54,24 @@ export default function LoginPage() {
                 mb={5}
                 fontSize={'80%'}
               />
-              <InputRightElement width="3rem">
+              <InputRightElement width="3rem" border={'none'}>
                 <IconButton
                   aria-label={showPassword ? "Скрыть пароль" : "Показать пароль"}
                   h="1.75rem"
                   size="sm"
                   onClick={togglePasswordVisibility}
                   icon={showPassword ? openEyeIcon : closedEyeIcon}
-                  border={'none'}
+                  variant="unstyled" 
+                  css={css`
+                    &:focus {
+                      box-shadow: none;
+                      border: none;
+                    }
+                    &:hover {
+                      background: none;
+ border: none;
+                    }
+                  `}
                 />
               </InputRightElement>
             </InputGroup>
