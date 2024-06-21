@@ -10,7 +10,7 @@ import RegisterPage from './Pages/RegisterPage/RegisterPage';
 function App() {
   const routes = [
     { path: "/", element: <Home /> },
-    { path: "/reg", element: <RegisterPage /> },
+    { path: "/register", element: <RegisterPage /> },
     { path: "/login", element: <LoginPage /> },
     { path: "/schedule", element: <Shedule /> },
     { path: "/main", element: <Main /> },
