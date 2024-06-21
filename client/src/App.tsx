@@ -5,11 +5,12 @@ import Home from './Pages/Home/Home';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import Shedule from './Pages/Schedule/Shedule';
 import Main from './Pages/Main/Main';
+import RegisterPage from './Pages/RegisterPage/RegisterPage';
 
 function App() {
   const routes = [
     { path: "/", element: <Home /> },
-    // { path: "/reg", element: <Reg /> },
+    { path: "/reg", element: <RegisterPage /> },
     { path: "/login", element: <LoginPage /> },
     { path: "/schedule", element: <Shedule /> },
     { path: "/main", element: <Main /> },
