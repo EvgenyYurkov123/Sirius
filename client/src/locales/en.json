@@ -1,0 +1,16 @@
+{
+    "login": "Login",
+    "register": "Register",
+    "email": "E-mail",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "rememberMe": "Remember me",
+    "agreeTerms": "I accept the terms",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginHere": "Login here",
+    "registerHere": "Register here",
+    "language": "Language",
+    "forgotPassword": "Forgot password?",
+    "loginAsCoach": "Login as coach",
+    "registerInSiriusFuture": "Register in Sirius Future"
+}

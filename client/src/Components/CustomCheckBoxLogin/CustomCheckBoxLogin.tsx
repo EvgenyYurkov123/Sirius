@@ -1,14 +1,12 @@
 import { Box, CheckboxProps } from "@chakra-ui/react";
-import { useState } from "react";
 import { css } from "@emotion/react";
 
-const CustomCheckbox = (props: CheckboxProps) => {
-    const [isChecked, setIsChecked] = useState(false);
+interface CustomCheckboxProps extends CheckboxProps {
+    isChecked: boolean;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-    const handleToggle = () => {
-        setIsChecked(!isChecked);
-    };
-
+const CustomCheckbox = ({ isChecked, onChange, ...props }: CustomCheckboxProps) => {
     return (
         <Box
             w="22px"
@@ -19,12 +17,12 @@ const CustomCheckbox = (props: CheckboxProps) => {
             border="1px solid rgb(200, 204, 208)"
             borderRadius="4px"
             cursor="pointer"
-            onClick={handleToggle}
+            onClick={(e) => onChange(e as unknown as React.ChangeEvent<HTMLInputElement>)} // Cast event type to satisfy TypeScript
             {...props}
             css={css`
-                background: transparent !important;
-                overflow: visible !important; // Allow content to overflow the box
-            `}
+        background: transparent !important;
+        overflow: visible !important; // Allow content to overflow the box
+      `}
         >
             {isChecked && (
                 <Box
@@ -34,8 +32,8 @@ const CustomCheckbox = (props: CheckboxProps) => {
                     justifyContent="center"
                     position="relative"
                     css={css`
-                        overflow: visible;
-                    `}
+            overflow: visible;
+          `}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none">
                         <path stroke="#C636FF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17.6 2.8 7.077 16 2.4 10.711" />

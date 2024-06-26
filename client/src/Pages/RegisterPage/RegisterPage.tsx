@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Heading, Input, Link, Text, Image, IconButton, InputRightElement, InputGroup } from "@chakra-ui/react";
 import { useState } from "react";
 import { css } from "@emotion/react";
+import { useTranslation } from 'react-i18next';
 import CustomCheckbox from "../../Components/CustomCheckBoxLogin/CustomCheckBoxLogin";
 
 export default function RegisterPage() {
@@ -9,6 +10,7 @@ export default function RegisterPage() {
     const [ruButtonSize, setRuButtonSize] = useState("lg");
     const [enButtonSize, setEnButtonSize] = useState("md");
     const [agreeTerms, setAgreeTerms] = useState(false);
+    const { t, i18n } = useTranslation();
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -21,11 +23,13 @@ export default function RegisterPage() {
     const handleRuButtonClick = () => {
         setRuButtonSize("lg");
         setEnButtonSize("md");
+        i18n.changeLanguage('ru');
     };
 
     const handleEnButtonClick = () => {
         setEnButtonSize("lg");
         setRuButtonSize("md");
+        i18n.changeLanguage('en');
     };
 
     const closedEyeIcon = (
@@ -41,21 +45,21 @@ export default function RegisterPage() {
     );
 
     return (
-        <Flex direction={'column'} minHeight="100vh" minW={'320px'} width="full" align="center" paddingTop={'10%'}>
+        <Flex direction={'column'} minHeight="100vh" minW={'320px'} width="full" align="center" paddingTop={'7%'}>
             <Flex>
                 <Image src="./favS1.png" alt="Example Image" mb={4} />
             </Flex>
             <Box maxWidth="30%" minW={'400'}>
                 <Box textAlign="center">
-                    <Heading color={'#323854'} fontSize={'35px'}>Регистрация в Sirius Future</Heading>
+                    <Heading color={'#323854'} fontSize={'35px'}>{t('registerInSiriusFuture')}</Heading>
                 </Box>
                 <Box my={4} textAlign="left">
                     <form>
-                        <Input placeholder="E-mail" mb={5} fontSize={'80%'} />
+                        <Input placeholder={t('email')} mb={5} fontSize={'80%'} />
                         <InputGroup>
                             <Input
                                 type={showPassword ? "text" : "password"}
-                                placeholder="Пароль"
+                                placeholder={t('password')}
                                 mb={5}
                                 fontSize={'80%'}
                             />
@@ -71,7 +75,7 @@ export default function RegisterPage() {
                   & > button:focus {
                     border: none;
                     outline: none;
-                    box-shadow: none;
+                    box-shadow: none.
                   }
 
                   & > button:hover {
@@ -92,7 +96,7 @@ export default function RegisterPage() {
                         <InputGroup>
                             <Input
                                 type={showConfirmPassword ? "text" : "password"}
-                                placeholder="Подтвердите пароль"
+                                placeholder={t('confirmPassword')}
                                 mb={5}
                                 fontSize={'80%'}
                             />
@@ -133,7 +137,7 @@ export default function RegisterPage() {
                                 isChecked={agreeTerms}
                                 onChange={(e) => setAgreeTerms(e.target.checked)}
                             />
-                            Я принимаю условия соглашения
+                            {t('agreeTerms')}
                         </Flex>
                         <Button
                             background="linear-gradient(267.41deg, rgb(147, 195, 255) -0.17%, rgb(183, 160, 255) 40.96%, rgb(218, 123, 255) 88.56%)"
@@ -144,22 +148,22 @@ export default function RegisterPage() {
                             borderRadius={'15px'}
                             border={'none'}
                         >
-                            Зарегистрироваться
+                            {t('register')}
                         </Button>
                     </form>
                 </Box>
                 <Flex justifyContent={'space-between'}>
                     <Link textAlign="center" href="#" color={'#008AFF'} fontSize={'100%'} _hover={{ textDecoration: "none" }}>
-                        У меня уже есть аккаунт
+                        {t('alreadyHaveAccount')}
                     </Link>
                     <Link textAlign="center" href="#" color={'#008AFF'} _hover={{ textDecoration: "none" }}>
-                        Войти как тренер
+                        {t('loginAsCoach')}
                     </Link>
                 </Flex>
             </Box>
             <Flex direction={'column'} mt={'7'}>
-                <Text>Уже зарегистрированы?</Text>
-                <Link href="/login" color={'#9A64FF'} fontSize={'24px'} _hover={{ textDecoration: "none" }}>Войти</Link>
+                <Text>{t('alreadyHaveAccount')}</Text>
+                <Link href="/login" color={'#9A64FF'} fontSize={'24px'} _hover={{ textDecoration: "none" }}>{t('login')}</Link>
             </Flex>
             <Flex justify="space-between" mt={4}>
                 <Link

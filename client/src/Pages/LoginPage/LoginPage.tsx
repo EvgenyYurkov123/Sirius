@@ -3,24 +3,69 @@ import { useState } from "react";
 import { css } from "@emotion/react";
 import CustomCheckbox from "../../Components/CustomCheckBoxLogin/CustomCheckBoxLogin";
 
+// Определяем типы для переводов
+type Translations = {
+  title: string;
+  emailPlaceholder: string;
+  passwordPlaceholder: string;
+  rememberMe: string;
+  loginButton: string;
+  forgotPassword: string;
+  loginAsTrainer: string;
+  noAccount: string;
+  register: string;
+};
+
+// Определяем тип для объекта всех переводов
+type LanguageKeys = 'ru' | 'en';
+type AllTranslations = Record<LanguageKeys, Translations>;
+
+const translations: AllTranslations = {
+  ru: {
+    title: "Вход в Sirius Future",
+    emailPlaceholder: "E-mail",
+    passwordPlaceholder: "Пароль",
+    rememberMe: "Запомнить меня",
+    loginButton: "Войти",
+    forgotPassword: "Я забыл пароль",
+    loginAsTrainer: "Войти как тренер",
+    noAccount: "Нет аккаунта?",
+    register: "Зарегистрироваться",
+  },
+  en: {
+    title: "Log in Sirius Future",
+    emailPlaceholder: "E-mail",
+    passwordPlaceholder: "Password",
+    rememberMe: "Remember me",
+    loginButton: "Login",
+    forgotPassword: "Forgot password?",
+    loginAsTrainer: "Log in as a coach",
+    noAccount: "Don’t have an account?",
+    register: "Sign up",
+  },
+};
+
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [ruButtonSize, setRuButtonSize] = useState("lg");
   const [enButtonSize, setEnButtonSize] = useState("md");
   const [rememberMe, setRememberMe] = useState(false);
+  const [language, setLanguage] = useState<LanguageKeys>("ru");
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
   const handleRuButtonClick = () => {
+    setLanguage("ru");
     setRuButtonSize("lg");
     setEnButtonSize("md");
   };
 
   const handleEnButtonClick = () => {
-    setEnButtonSize("lg");
+    setLanguage("en");
     setRuButtonSize("md");
+    setEnButtonSize("lg");
   };
 
   const closedEyeIcon = (
@@ -35,6 +80,8 @@ export default function LoginPage() {
     </svg>
   );
 
+  const t = translations[language];
+
   return (
     <Flex direction={'column'} minHeight="100vh" minW={'320px'} width="full" align="center" paddingTop={'10%'}>
       <Flex>
@@ -42,15 +89,15 @@ export default function LoginPage() {
       </Flex>
       <Box maxWidth="30%" minW={'400'}>
         <Box textAlign="center">
-          <Heading color={'#323854'} fontSize={'35px'}>Вход в Sirius Future</Heading>
+          <Heading color={'#323854'}  fontSize={'35px'}>{t.title}</Heading>
         </Box>
         <Box my={4} textAlign="left">
           <form>
-            <Input placeholder="E-mail" mb={5} fontSize={'80%'} />
+            <Input placeholder={t.emailPlaceholder} mb={5} fontSize={'80%'} />
             <InputGroup>
               <Input
                 type={showPassword ? "text" : "password"}
-                placeholder="Пароль"
+                placeholder={t.passwordPlaceholder}
                 mb={5}
                 fontSize={'80%'}
               />
@@ -80,7 +127,7 @@ export default function LoginPage() {
                   size="sm"
                   onClick={togglePasswordVisibility}
                   icon={showPassword ? openEyeIcon : closedEyeIcon}
-                  variant="unstyled" // Убираем стили
+                  variant="unstyled"
                 />
               </InputRightElement>
             </InputGroup>
@@ -91,7 +138,7 @@ export default function LoginPage() {
                 isChecked={rememberMe}
                 onChange={(e) => setRememberMe(e.target.checked)}
               />
-              Запомнить меня
+              {t.rememberMe}
             </Flex>
             <Button
               background="linear-gradient(267.41deg, rgb(147, 195, 255) -0.17%, rgb(183, 160, 255) 40.96%, rgb(218, 123, 255) 88.56%)"
@@ -102,22 +149,22 @@ export default function LoginPage() {
               borderRadius={'15px'}
               border={'none'}
             >
-              Войти
+              {t.loginButton}
             </Button>
           </form>
         </Box>
         <Flex justifyContent={'space-between'}>
           <Link textAlign="center" href="#" color={'#008AFF'} fontSize={'100%'} _hover={{ textDecoration: "none" }}>
-            Я забыл пароль
+            {t.forgotPassword}
           </Link>
           <Link textAlign="center" href="#" color={'#008AFF'} _hover={{ textDecoration: "none" }}>
-            Войти как тренер
+            {t.loginAsTrainer}
           </Link>
         </Flex>
       </Box>
       <Flex direction={'column'} mt={'7'}>
-        <Text>Нет аккаунта?</Text>
-        <Link href="/register" color={'#9A64FF'} fontSize={'24px'} _hover={{ textDecoration: "none" }}>Зарегистрироваться</Link>
+        <Text>{t.noAccount}</Text>
+        <Link href="/register" color={'#9A64FF'} fontSize={'24px'} _hover={{ textDecoration: "none" }}>{t.register}</Link>
       </Flex>
       <Flex justify="space-between" mt={4}>
         <Link

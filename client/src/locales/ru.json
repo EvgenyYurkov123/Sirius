@@ -1,0 +1,16 @@
+{
+    "login": "Войти",
+    "register": "Зарегистрироваться",
+    "email": "E-mail",
+    "password": "Пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "rememberMe": "Запомнить меня",
+    "agreeTerms": "Я принимаю условия соглашения",
+    "alreadyHaveAccount": "Уже зарегистрированы?",
+    "loginHere": "Войти здесь",
+    "registerHere": "Зарегистрироваться здесь",
+    "language": "Язык",
+    "forgotPassword": "Я забыл пароль",
+    "loginAsCoach": "Войти как тренер",
+    "registerInSiriusFuture": "Регистрация в Sirius Future"
+}
